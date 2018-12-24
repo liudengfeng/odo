@@ -24,10 +24,10 @@ import pytest
 from odo import odo
 
 
-requires_datetimetz = pytest.mark.skipif(
-    LooseVersion(pd.__version__) < LooseVersion('0.17'),
-    reason="Pandas before DatetimeTZ",
-)
+# requires_datetimetz = pytest.mark.skipif(
+#     LooseVersion(pd.__version__) < LooseVersion('0.17'),
+#     reason="Pandas before DatetimeTZ",
+# )
 
 
 data = [('Alice', 100), ('Bob', 200)]
@@ -101,7 +101,7 @@ def test_categorical_pandas():
     assert_dshape_equal(discover(df.x), 15 * Categorical(['a', 'b', 'c']))
 
 
-@requires_datetimetz
+# @requires_datetimetz
 def test_datetimetz_pandas():
     df = pd.DataFrame(
         OrderedDict([
@@ -142,9 +142,9 @@ def test_numeric_index(dtype):
 @pytest.mark.parametrize(
     'tz', (
         None,
-        requires_datetimetz('US/Eastern'),
-        requires_datetimetz('UTC'),
-        requires_datetimetz('Europe/Moscow'),
+        'US/Eastern',
+        'UTC',
+        'Europe/Moscow',
     ),
 )
 def test_datetime_index(tz):
