@@ -9,7 +9,7 @@ import versioneer
 
 def find_data_files(where, exts):
     exts = tuple(exts)
-    for root, dirs, files in os.walk(where):
+    for root, _, files in os.walk(where):
         for f in files:
             if any(fnmatch(f, pat) for pat in exts):
                 yield os.path.join(root, f)
