@@ -60,7 +60,7 @@ def extras_require():
 
 
 setup(name='odo',
-      version='0.5.1', # versioneer.get_version(),
+      version=versioneer.get_version(),
       cmdclass=versioneer.get_cmdclass(),
       description='Data migration utilities',
       url='https://github.com/blaze/odo',
