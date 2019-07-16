@@ -69,5 +69,5 @@ restart_ordering()  # Restart multipledispatch ordering and do ordering
 
 
 from ._version import get_versions
-__version__ = get_versions()['version']
+__version__ = '0.5.2' #get_versions()['version']
 del get_versions
